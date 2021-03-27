@@ -14,15 +14,16 @@ const Statistics = ({ feedback }) => {
   const getPositivePercent = () => ((feedback.good / getReviewCount()) * 100)
 
   const renderFields = () => (
-    <>
-      <StatisticLine text="good" value={good} />
-      <StatisticLine text="neutral" value={neutral} />
-      <StatisticLine text="bad" value={bad} />
-      <StatisticLine text="all" value={getReviewCount()} />
-      <StatisticLine text="average" value={getAverage()} />
-      <StatisticLine text="positive" value={getPositivePercent()} />
-
-    </>
+    <table>
+      <tbody>
+        <StatisticLine text="good" value={good} />
+        <StatisticLine text="neutral" value={neutral} />
+        <StatisticLine text="bad" value={bad} />
+        <StatisticLine text="all" value={getReviewCount()} />
+        <StatisticLine text="average" value={getAverage()} />
+        <StatisticLine text="positive" value={`${getPositivePercent()}%`} />
+      </tbody>
+    </table>
   )
 
   return (
