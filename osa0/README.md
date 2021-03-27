@@ -1,9 +1,17 @@
 # Osa0
 
-Osa0 tehtävät
+Osa0 tehtävät.
+
+Diagrammit luotu [websequencediagrams](https://www.websequencediagrams.com/).
 
 ## 0.4: uusi muistiinpano
 
+![Task 0.4](./img/04.png)
+
+<details>
+<summary>Tekstinä</summary>
+
+```sh
 käyttäjä->selain: Päivitä input-value
 
 note over käyttäjä:
@@ -30,9 +38,18 @@ palvelin->selain: HTTP 302 \n location: /notes
 note over selain:
 Selain lataa sivun uudelleen, jolloin sisältö päivittyy
 end note
+```
+
+</details>
 
 ## 0.5: Single Page App
 
+![Task 0.5](./img/05.png)
+
+<details>
+<summary>Tekstinä</summary>
+
+```sh
 selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
 palvelin-->selain: HTML-koodi
 selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -52,9 +69,18 @@ säilöö haetun datan notes-muuttujaan ja
 luo uudet elementit DOM:iin
 end note
 selain->selain: Luo haettu data DOM:iin
+```
+
+</details>
 
 ## 0.6: Uusi muistiinpano
 
+![Task 0.6](./img/06.png)
+
+<details>
+<summary>Tekstinä</summary>
+
+```sh
 käyttäjä->selain: Päivitä input-value
 
 note over käyttäjä:
@@ -95,3 +121,6 @@ else uusi note läpäisee validoinnin
 palvelin->palvelin: lisää note listaan
 palvelin->selain: status code 201 \n body: {message: "note created"}
 end
+```
+
+</details>
