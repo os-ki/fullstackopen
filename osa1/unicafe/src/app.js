@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from "./button";
 import Statistics from "./statistics";
 
 
@@ -22,7 +23,7 @@ const App = () => {
       <div>
         {
           Object.keys(feedback).map(key => (
-            <button key={key} onClick={updateFeedback(key)}>{key}</button>
+            <Button key={key} onClick={updateFeedback(key)}>{key}</Button>
           ))
         }
       </div>

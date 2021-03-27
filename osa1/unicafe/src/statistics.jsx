@@ -1,4 +1,5 @@
 import React from "react"
+import StatisticLine from './statisticLine'
  
 const Statistics = ({ feedback }) => {
   const { good, neutral, bad } = feedback
@@ -14,12 +15,13 @@ const Statistics = ({ feedback }) => {
 
   const renderFields = () => (
     <>
-      <p>good: {good}</p>
-      <p>neutral: {neutral}</p>
-      <p>bad: {bad}</p>
-      <p>all: {getReviewCount()}</p>
-      <p>average: {getAverage()}</p>
-      <p>positive: {getPositivePercent()}%</p>
+      <StatisticLine text="good" value={good} />
+      <StatisticLine text="neutral" value={neutral} />
+      <StatisticLine text="bad" value={bad} />
+      <StatisticLine text="all" value={getReviewCount()} />
+      <StatisticLine text="average" value={getAverage()} />
+      <StatisticLine text="positive" value={getPositivePercent()} />
+
     </>
   )
 
