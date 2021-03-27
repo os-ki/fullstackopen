@@ -15,6 +15,18 @@ const App = () => {
     })
   }
 
+  const getReviewCount = () => (
+    Object.values(feedback)
+          .reduce((a, c) => a + c)
+  )
+
+  const getAverage = () => {
+    const total = getReviewCount()
+    return total ? (feedback.good - feedback.bad) / total : 0
+  }
+
+  const getPositivePercent = () => ((feedback.good / getReviewCount()) * 100)
+
   return (
     <div>
       <h1>Give feedback</h1>
@@ -30,6 +42,10 @@ const App = () => {
         {Object.entries(feedback).map(([key, value]) => (
           <p key={key}>{key}: {value}</p>
         ))}
+        <hr />
+        <p>all: {getReviewCount()}</p>
+        <p>average: {getAverage()}</p>
+        {getReviewCount() > 0 && <p>positive: {getPositivePercent()}%</p>}
       </div>
     </div>
   );
