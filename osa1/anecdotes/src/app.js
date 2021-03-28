@@ -11,7 +11,13 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0))
 
+  const vote = () => {
+    const arr = [...votes]
+    arr[selected] += 1;
+    setVotes(arr)
+  }
   return (
     <div>
       <button onClick={() => {
@@ -20,8 +26,10 @@ const App = () => {
       >
         Random
       </button>
+      <button onClick={vote}>Vote</button>
       <div>
-        {anecdotes[selected]}
+        <p>{anecdotes[selected]}</p>
+        <p>Votes: {votes[selected]}</p>
         </div>
   
     </div>
