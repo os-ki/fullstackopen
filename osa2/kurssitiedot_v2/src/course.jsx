@@ -9,13 +9,13 @@ const Course = ({ course }) => {
     }, 0);
 
   return (
-    <div className="course">
-      <Header name={course?.name} />
+    <section className="course">
+      <Header title={course?.name} hTag="h2" />
       <Content parts={course?.parts} />
       <p>
         <b>Total of {getExercisesCount()} exercises</b>
       </p>
-    </div>
+    </section>
   );
 };
 

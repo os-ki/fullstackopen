@@ -1,9 +1,10 @@
 import React from "react";
 
-const Header = ({ name }) => {
+const Header = ({ title, hTag }) => {
+  const Headline = hTag || "h2";
   return (
     <header className="header">
-      <h1>{name}</h1>
+      <Headline>{title}</Headline>
     </header>
   );
 };
