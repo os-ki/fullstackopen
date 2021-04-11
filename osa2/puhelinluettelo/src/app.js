@@ -6,7 +6,12 @@ const App = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    setPersons([...persons, { name: newName }]);
+    if (persons.find((person) => person.name === newName)) {
+      alert(`${newName} is already added to phonebook`);
+    } else {
+      setPersons([...persons, { name: newName }]);
+    }
+
     setNewName("");
   };
   return (
@@ -28,7 +33,7 @@ const App = () => {
       </form>
       <h2>Numbers</h2>
       {persons.map((person) => (
-        <p>{person.name}</p>
+        <p key={person.name}>{person.name}</p>
       ))}
     </div>
   );
