@@ -2,4 +2,4 @@
 
 ## Puhelinluettelo
 
-Tasks: 2.6 - 2.10
+Tasks: 2.6 - 2.14
