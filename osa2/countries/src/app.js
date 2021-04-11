@@ -38,7 +38,7 @@ const App = () => {
         value={filterValue}
         onChange={(e) => setFilterValue(e.target.value)}
       />
-      <Countries countries={filteredCountries} />
+      <Countries countries={filteredCountries} setFilter={setFilterValue} />
     </div>
   );
 };

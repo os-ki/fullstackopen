@@ -1,7 +1,7 @@
 import React from "react";
 import Country from "./country";
 
-const Countries = ({ countries }) => {
+const Countries = ({ countries, setFilter }) => {
   const renderContent = () => {
     if (countries.length > 10) {
       return <p>Too many matches ({countries.length}), specify search</p>;
@@ -13,6 +13,7 @@ const Countries = ({ countries }) => {
         extendInfo={countries.length === 1}
         key={country.name}
         country={country}
+        onShowClick={() => setFilter(country.name)}
       />
     ));
   };

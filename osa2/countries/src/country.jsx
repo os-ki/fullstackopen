@@ -1,6 +1,6 @@
 import React from "react";
 
-const Country = ({ country, extendInfo }) => (
+const Country = ({ country, onShowClick, extendInfo }) => (
   <li>
     {extendInfo ? (
       <div>
@@ -20,7 +20,9 @@ const Country = ({ country, extendInfo }) => (
         />
       </div>
     ) : (
-      country.name
+      <div>
+        {country.name} <button onClick={onShowClick}>Show</button>
+      </div>
     )}
   </li>
 );
